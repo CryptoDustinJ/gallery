@@ -401,4 +401,7 @@
   <!-- Content description spoken when the "menu" icon is focused. [CHAR_LIMIT=NONE] -->
   <string name="cd_menu">Menu</string>
 
+  <!-- Swarm Bridge -->
+  <string name="swarm_a11y_description" translatable="false">Swarm Bridge: Allows remote agents to control the device via the HTTP API. Tap, type, screenshot, and more.</string>
+  <string name="swarm_notif_listener_description" translatable="false">Swarm Bridge: Reads notifications for remote agent monitoring.</string>
 </resources>
