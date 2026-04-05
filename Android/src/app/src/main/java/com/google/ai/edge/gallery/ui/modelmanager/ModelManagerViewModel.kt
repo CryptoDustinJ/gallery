@@ -18,6 +18,7 @@ package com.google.ai.edge.gallery.ui.modelmanager
 
 import android.content.Context
 import android.util.Log
+import com.google.ai.edge.gallery.server.SwarmBridgeManager
 import androidx.activity.result.ActivityResult
 import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
@@ -489,6 +490,11 @@ constructor(
         }
       curStatus[model.name] = status.copy(initializedBackends = newInitializedBackends)
       _uiState.update { _uiState.value.copy(modelInitializationStatus = curStatus) }
+
+      // Auto-register with Swarm Bridge when a model initializes.
+      if (status.status == ModelInitializationStatusType.INITIALIZED && model.instance != null) {
+        SwarmBridgeManager.setActiveModel(model)
+      }
     }
   }
 

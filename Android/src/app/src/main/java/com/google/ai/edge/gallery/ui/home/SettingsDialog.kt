@@ -79,6 +79,7 @@ import com.google.ai.edge.gallery.ui.common.tos.AppTosDialog
 import com.google.ai.edge.gallery.ui.modelmanager.ModelManagerViewModel
 import com.google.ai.edge.gallery.ui.theme.ThemeSettings
 import com.google.ai.edge.gallery.ui.theme.labelSmallNarrow
+import com.google.ai.edge.gallery.server.SwarmBridgePanel
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -290,6 +291,9 @@ fun SettingsDialog(
               }
             }
           }
+
+          // Swarm Bridge toggle.
+          SwarmBridgePanel()
 
           // Third party licenses.
           Column(modifier = Modifier.fillMaxWidth().semantics(mergeDescendants = true) {}) {
