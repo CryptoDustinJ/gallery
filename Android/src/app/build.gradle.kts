@@ -69,6 +69,10 @@ android {
   }
 }
 
+kapt {
+  correctErrorTypes = true
+}
+
 dependencies {
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -111,8 +115,6 @@ dependencies {
   implementation(libs.moshi.kotlin)
   implementation(libs.nanohttpd)
   kapt(libs.hilt.android.compiler)
-  // kapt needs litertlm on classpath to resolve annotations in generated stubs
-  kapt(libs.litertlm)
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
