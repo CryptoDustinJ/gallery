@@ -25,7 +25,6 @@ plugins {
   alias(libs.plugins.hilt.application)
   alias(libs.plugins.oss.licenses)
   alias(libs.plugins.ksp)
-  kotlin("kapt")
 }
 
 android {
@@ -69,9 +68,6 @@ android {
   }
 }
 
-kapt {
-  correctErrorTypes = true
-}
 
 dependencies {
   implementation(libs.androidx.core.ktx)
@@ -114,7 +110,7 @@ dependencies {
   implementation(libs.androidx.exifinterface)
   implementation(libs.moshi.kotlin)
   implementation(libs.nanohttpd)
-  kapt(libs.hilt.android.compiler)
+  ksp(libs.hilt.android.compiler)
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
